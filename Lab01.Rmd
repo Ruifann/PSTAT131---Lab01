@@ -35,7 +35,7 @@ output: html_document
 
 # Descriptive models: Choose model to best visually emphasize a trend in data
 
-# Inferential models: often used to compare the differences between the treatment groups and aim is to test theories such as causal claims State relationship between outcome and predictor
+# Inferential models: often used to compare the differences between the treatment groups and aim is to testing theories, causal claims, stating relationship between outcome and predictor
 
 # Predictive models: predict future behavior and aim is to predict Y with minimum reducible error
 
@@ -57,13 +57,56 @@ output: html_document
 
 
 ```{r}
-A political candidate’s campaign has collected some detailed voter history data from their constituents. The campaign is interested in two questions:
+# A political candidate’s campaign has collected some detailed voter history data from their constituents. The campaign is interested in two questions:
 
-Given a voter’s profile/data, how likely is it that they will vote in favor of the candidate?
+# Given a voter’s profile/data, how likely is it that they will vote in favor of the candidate?
 
-How would a voter’s likelihood of support for the candidate change if they had personal contact with the candidate?
+# Ans: This is an inferential model becuase the campaign tries to state the relationship between the predictor and outcomes.
 
-Classify each question as either predictive or inferential. Explain your reasoning for each.
+# How would a voter’s likelihood of support for the candidate change if they had personal contact with the candidate?
+
+# Ans: This is a predictive model because the campaign wants to know about the voter's future behavior after they had personal contact with the candidate with a minimum reducible error.
+
+# Classify each question as either predictive or inferential. Explain your reasoning for each.
+```
+```{r}
+# We are interested in highway miles per gallon, or the hwy variable. Create a histogram of this variable. Describe what you see/learn.
+hist(mpg$hwy)
+# I learned that the histogram is right-skwed and the maximum is 45. The median number is between 20-25.
+```
+
+
+```{r}
+# Create a scatterplot. Put hwy on the x-axis and cty on the y-axis. Describe what you notice. Is there a relationship between hwy and cty? What does this mean?
+plot(mpg$hwy, mpg$cty,
+   xlab="hwy ", ylab="cty ")
+abline(lm(mpg$cty~mpg$hwy), col="red")
+# I noticed that there is a positive linear relationship between hwy and cty.
+# This means that cty increases linearly while hwy increases.
+```
+```{r}
+# Make a bar plot of manufacturer. Flip it so that the manufacturers are on the y-axis. Order the bars by height. Which manufacturer produced the most cars? Which produced the least?
+counts <- table(mpg$manufacturer)
+barplot(sort(counts), main="Car manufacture Distribution", horiz=TRUE, las =2)
+sort(counts)
+# Based on the graph, lincoln produce the least and dodge produced the most.
+```
+```{r}
+# Make a box plot of hwy, grouped by cyl. Do you see a pattern? If so, what?
+boxplot(mpg$hwy ~ mpg$cyl)
+#I can see the pattern: with the increase of cyl, the mean of hwy is decreasing and the range of each cyl group is also moving donward on the y-axis. There is a negative relationship between hwy and cyl.
+```
+```{r}
+# Use the corrplot package to make a lower triangle correlation matrix of the mpg dataset. (Hint: You can find information on the package here.)
+
+# Which variables are positively or negatively correlated with which others? Do these relationships make sense to you? Are there any that surprise you?
+install.packages("corrplot")
+library(corrplot)
+mpg_modified <- mpg %>% select(year, displ, cyl, cty, cyl, hwy) #by modifing the table, I only take the numerical values to do a corrplot, we can also try to transform categorical data to numerical data like 1 and 0
+M = cor(mpg_modified)
+corrplot(M)
+
+#Based on the graph, I can see that displ and cty has a negative correlation, cty and cyl has a negative correlation. cyl and year has a weak position correlation. displ and year has a weak positive correlation. cty and year does not have a mentionable correlation. hwy has a negative correlation with displ. cyl has a negative correlation with hwy. cty has a positive relationship with hwy. These correlations make sense to me. If a car has a low cty, then it is reasonable that it has a low hwy as well. Their relationship is positive for sure. I do not have any surprise since car pollution is not a new topic and we covered it in previous pstat class.
 ```
 
 
