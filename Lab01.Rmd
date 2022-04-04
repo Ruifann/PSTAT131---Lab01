@@ -1,0 +1,19 @@
+---
+title: "Lab01"
+output: html_document
+---
+
+```{r}
+# Define supervised and unsupervised learning. What are the difference(s) between them?
+# Supervised learning is a machine learning approach that’s defined by its use of labeled datasets. Supervised learning can be separated into two types of problems when data mining: classification and regression.
+# Unsupervised learning uses machine learning algorithms to analyze and cluster unlabeled data sets. Unsupervised learning models are used for three main tasks: clustering, association and dimensionality reduction.
+# The difference between superviced learning and unsuperviced learning is that supervised learning uses labeled input and output data, while an unsupervised learning algorithm does not.
+#Source: https://www.ibm.com/cloud/blog/supervised-vs-unsupervised-learning
+```
+
+
+```{r}
+# Explain the difference between a regression model and a classification model, specifically in the context of machine learning.
+# The main difference between regression model and classification model is the data type of Y.
+# In a regression model, Y is quantitative and numerical values such as price and blood preesure.
+# In a classification model. Y is a qualitative and categorical values such as married/ not married.
