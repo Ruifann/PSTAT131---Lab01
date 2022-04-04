@@ -5,6 +5,10 @@ output: html_document
 
 ```{r}
 # Define supervised and unsupervised learning. What are the difference(s) between them?
+```
+
+
+```{r}
 # Supervised learning is a machine learning approach that’s defined by its use of labeled datasets. Supervised learning can be separated into two types of problems when data mining: classification and regression.
 # Unsupervised learning uses machine learning algorithms to analyze and cluster unlabeled data sets. Unsupervised learning models are used for three main tasks: clustering, association and dimensionality reduction.
 # The difference between superviced learning and unsuperviced learning is that supervised learning uses labeled input and output data, while an unsupervised learning algorithm does not.
@@ -17,3 +21,49 @@ output: html_document
 # The main difference between regression model and classification model is the data type of Y.
 # In a regression model, Y is quantitative and numerical values such as price and blood preesure.
 # In a classification model. Y is a qualitative and categorical values such as married/ not married.
+```
+
+
+```{r}
+# Name two commonly used metrics for regression ML problems. Name two commonly used metrics for classification ML problems.
+# Not covered yet
+```
+
+
+```{r}
+# As discussed, statistical models can be used for different purposes. These purposes can generally be classified into the following three categories. Provide a brief description of each.
+
+# Descriptive models: Choose model to best visually emphasize a trend in data
+
+# Inferential models: often used to compare the differences between the treatment groups and aim is to test theories such as causal claims State relationship between outcome and predictor
+
+# Predictive models: predict future behavior and aim is to predict Y with minimum reducible error
+
+# Source: lecture2 power point
+```
+
+
+```{r}
+#Predictive models are frequently used in machine learning, and they can usually be described as either mechanistic or empirically-driven. Answer the following questions.
+
+#Define mechanistic. Define empirically-driven. How do these model types differ? How are they similar?
+
+#In general, is a mechanistic or empirically-driven model easier to understand? Explain your choice.
+
+#Describe how the bias-variance tradeoff is related to the use of mechanistic or empirically-driven models.
+
+#Not covered yet
+```
+
+
+```{r}
+A political candidate’s campaign has collected some detailed voter history data from their constituents. The campaign is interested in two questions:
+
+Given a voter’s profile/data, how likely is it that they will vote in favor of the candidate?
+
+How would a voter’s likelihood of support for the candidate change if they had personal contact with the candidate?
+
+Classify each question as either predictive or inferential. Explain your reasoning for each.
+```
+
+
